@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.*?>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" prefHeight="40.0" prefWidth="40.0" type="Pane" xmlns="http://javafx.com/javafx/11">
+    <Circle fx:id="circle" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" radius="20.0" stroke="BLACK" strokeType="INSIDE"/>
+    <Group fx:id="declinedGroup" visible="false">
+        <Line endX="30" endY="30.0" startX="10" startY="10.0" strokeWidth="2.0"/>
+        <Line endX="30" endY="10" startX="10" startY="30.0" strokeWidth="2.0"/>
+    </Group>
+    <Group fx:id="acceptedGroup" visible="false">
+        <Line endX="19" endY="31" startX="9" startY="22.0" strokeWidth="2.0"/>
+        <Line endX="19" endY="31" startX="30" startY="10" strokeWidth="2.0"/>
+    </Group>
+</fx:root>

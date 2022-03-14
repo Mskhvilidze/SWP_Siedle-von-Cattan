@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.debug.DebugPresenter">
+
+    <Button fx:id="build" layoutX="85.0" layoutY="20.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="Build State" />
+    <Button fx:id="dice" layoutX="165.0" layoutY="20.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="Dice State" />
+    <Button fx:id="end" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="End State" />
+    <Button fx:id="play" layoutX="93.0" layoutY="52.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="Play State" />
+    <Button fx:id="robberDiscard" layoutX="260.0" layoutY="20.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="RobberDiscard State" />
+    <Button fx:id="robberPlacing" layoutX="261.0" layoutY="52.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="RobberPlacing State" />
+    <Button fx:id="setup" layoutX="13.0" layoutY="52.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="Setup State" />
+    <Button fx:id="trade" layoutX="162.0" layoutY="52.0" mnemonicParsing="false" onAction="#onStateDebugSwitch" text="Trade State" />
+    <Button fx:id="maxRes" layoutX="191.0" layoutY="361.0" mnemonicParsing="false" onAction="#onMaxResources" text="Max Resources" />
+    <Button layoutX="296.0" layoutY="330.0" mnemonicParsing="false" onAction="#setDevCards" text="Set DevCards" />
+    <Button layoutX="296.0" layoutY="361.0" mnemonicParsing="false" onAction="#setResources" text="Set Resources" />
+    <ComboBox fx:id="playerPicker" layoutX="16.0" layoutY="361.0" prefHeight="25.0" prefWidth="70.0" visibleRowCount="4" />
+    <Label fx:id="currentStateLabel" layoutX="15.0" layoutY="106.0" text="Current State:" />
+    <Spinner fx:id="lumber" layoutX="60.0" layoutY="300.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="wool" layoutX="110.0" layoutY="300.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="grain" layoutX="160.0" layoutY="300.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="ore" layoutX="210.0" layoutY="300.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="brick" layoutX="260.0" layoutY="300.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="diceValue" layoutX="60.0" layoutY="158.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="12" min="-1" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="vp" layoutX="60.0" layoutY="250.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="knight" layoutX="110.0" layoutY="250.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="yearOfPlenty" layoutX="160.0" layoutY="250.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="monopoly" layoutX="210.0" layoutY="250.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Spinner fx:id="road" layoutX="260.0" layoutY="250.0" prefHeight="25.0" prefWidth="50.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+        </valueFactory>
+    </Spinner>
+    <Button layoutX="138.0" layoutY="158.0" mnemonicParsing="false" onAction="#setDiceValue" text="Set Dice-Value" />
+    <Label layoutX="6.0" layoutY="254.0" text="DevCard" />
+    <Label layoutX="20.0" layoutY="304.0" text="Rss" />
+    <Label layoutX="60.0" layoutY="230.0" prefHeight="17.0" prefWidth="251.0" text="VP          Knight      Year        Mono      Road" />
+    <Label layoutX="60.0" layoutY="280.0" prefHeight="17.0" prefWidth="251.0" text="Lumber   Wool       Grain       Ore         Brick" />
+</AnchorPane>

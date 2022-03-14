@@ -1,0 +1,43 @@
+.jfx-button {
+    -fx-font-size: 16;
+}
+
+#gameOverPane {
+    -fx-background-color: #8F1D27;
+    -fx-background-image: url("../graphics/Hintergrund_ohneLogo.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-width: 5;
+}
+
+#background {
+    -fx-background-color: BLACK;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30;
+    -fx-border-width: 5;
+    -fx-opacity: 0.6;
+
+}
+
+
+#gameEndLabel {
+    -fx-text-fill: #FABB00;
+    -fx-font-size: 50;
+    -fx-translate-x: -70;
+}
+
+.end-label {
+    -fx-text-fill: #FABB00;
+    -fx-font-size: 24;
+}
+
+#leaveButton {
+    -fx-background-color: #8F1D27;
+    -fx-text-fill: #FABB00;
+}
+
+#leaveButton:hover {
+    -fx-background-color: #FF0000;
+}

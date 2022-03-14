@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="root" prefHeight="871" prefWidth="1600" stylesheets="@../../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.GameSessionPresenter">
+    <Pane layoutX="90.0">
+        <fx:include fx:id="boardView" source="BoardView.fxml" />
+    </Pane>
+    <Pane fx:id="buyBuildPane" layoutX="850.0" layoutY="500.0" maxHeight="333.0" maxWidth="433.0" minHeight="333.0" minWidth="433.0" prefHeight="333.0" prefWidth="433.0">
+        <fx:include fx:id="buyBuildView" source="BuyBuildView.fxml" />
+    </Pane>
+    <Pane fx:id="tradePane" layoutX="850.0" layoutY="500.0" maxHeight="333.0" maxWidth="433.0" minHeight="333.0" minWidth="433.0" prefHeight="333.0" prefWidth="433.0" visible="false">
+        <fx:include fx:id="tradeView" source="../trade/TradeView.fxml" />
+    </Pane>
+    <Pane fx:id="bankTradePane" layoutX="850.0" layoutY="500.0" maxHeight="333.0" maxWidth="433.0" minHeight="333.0" minWidth="433.0" prefHeight="333.0" prefWidth="433.0" visible="false">
+        <fx:include fx:id="bankTradeView" source="../trade/BankTradeView.fxml" />
+    </Pane>
+    <Pane layoutX="850.0" pickOnBounds="false">
+        <fx:include fx:id="offerView" source="../trade/OfferView.fxml" />
+    </Pane>
+    <Pane fx:id="debugPane" style="-fx-background-color: white;" translateX="900.0" translateY="-40.0" visible="false" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="40.0">
+        <fx:include fx:id="debugView" source="DebugView.fxml" />
+    </Pane>
+    <Pane fx:id="chatPane" layoutX="210.0" layoutY="600.0" prefHeight="265.0" prefWidth="620.0">
+    </Pane>
+    <Pane fx:id="inventoryPane" layoutX="1097.0" layoutY="378.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false">
+        <fx:include fx:id="inventoryView" source="InventoryView.fxml" />
+    </Pane>
+    <Pane fx:id="gameProfilePane" layoutX="-600.0" layoutY="2.0" prefHeight="550.0" prefWidth="148.0" translateX="600.0" AnchorPane.leftAnchor="-600.0" AnchorPane.topAnchor="2.0">
+        <fx:include fx:id="gameProfileView" source="GameProfileView.fxml" />
+    </Pane>
+    <Pane fx:id="monopolyPane" layoutX="850.0" layoutY="89.0" visible="false">
+        <fx:include source="MonopolyView.fxml" />
+    </Pane>
+    <Pane fx:id="yearOfPlentyPane" layoutX="850.0" layoutY="89.0" visible="false">
+        <fx:include fx:id="yearOfPlentyView" source="YearOfPlentyView.fxml" />
+    </Pane>
+
+    <Pane fx:id="playerPickerPane" layoutX="850.0" layoutY="89.0" visible="false">
+        <fx:include fx:id="playerPickerView" source="PlayerPickerView.fxml" />
+    </Pane>
+    <Pane fx:id="dicePane" layoutX="200.0" layoutY="150.0" visible="false">
+        <fx:include fx:id="diceView" source="DiceView.fxml" />
+    </Pane>
+    <Pane fx:id="robberPane" layoutX="200.0" layoutY="150.0" visible="false">
+        <fx:include fx:id="robberView" source="RobberView.fxml" />
+    </Pane>
+    <Pane fx:id="cardPane" layoutX="1080.0" layoutY="10.0" visible="false">
+        <fx:include fx:id="cardView" source="CardView.fxml" />
+    </Pane>
+
+    <JFXButton fx:id="rollDiceButton" layoutX="25.0" layoutY="614.0" mnemonicParsing="false" onAction="#onRollDiceButtonPressed" prefHeight="25.0" prefWidth="161.0" text="Würfeln" translateX="5.0" />
+    <JFXButton layoutX="30.0" layoutY="750.0" mnemonicParsing="false" onAction="#onToggleLeaveGame" prefHeight="25.0" prefWidth="161.0" text="Spiel verlassen" />
+    <JFXButton fx:id="endGameButton" layoutX="27.0" layoutY="833.0" mnemonicParsing="false" onAction="#endGame" text="Spielende (Testzwecke)" />
+    <JFXNodesList fx:id="tradeNodeList" layoutX="30.0" layoutY="650.0" spacing="5">
+        <JFXButton fx:id="tradeButton" layoutX="30.0" layoutY="700.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="161.0" text="Handel" />
+        <JFXButton mnemonicParsing="false" onAction="#onOpenTradeWindowButtonPressed" prefHeight="25.0" prefWidth="161.0" text="Spielerhandel" translateX="170.0" translateY="-40.0" />
+        <JFXButton mnemonicParsing="false" onAction="#onOpenBankTradeWindowButtonPressed" prefHeight="25.0" prefWidth="161.0" text="Bankhandel" translateX="170.0" translateY="-40.0" />
+    </JFXNodesList>
+    <JFXButton fx:id="debugButton" layoutX="54.0" layoutY="789.0" mnemonicParsing="false" onAction="#onToggleDebugMenuButtonPressed" text="Debug öffnen" />
+    <Label fx:id="turnTimerLabel" layoutX="30.0" layoutY="562.0" text="Label" />
+    <Label fx:id="myTurnLabel" layoutX="27.0" layoutY="585.0" text="Das Spiel startet gleich!" />
+    <JFXButton fx:id="turnEndButton" layoutX="30.0" layoutY="700.0" mnemonicParsing="false" onAction="#onTurnEndButtonPressed" prefHeight="25.0" prefWidth="161.0" text="Zug beenden" />
+
+    <Pane fx:id="gameOverPane" layoutX="149.0" layoutY="48.0" prefHeight="572.0" prefWidth="944.0" stylesheets="@../../css/gameOver.css" visible="false">
+        <fx:include fx:id="gameOverView" source="GameOverView.fxml" />
+    </Pane>
+    <Pane fx:id="discardCardsPane" layoutX="149.0" layoutY="48.0" prefHeight="572.0" prefWidth="944.0" visible="false">
+        <fx:include fx:id="discardCardsView" source="DiscardCardsView.fxml" />
+    </Pane>
+    <Pane fx:id="gameInformationPane" layoutX="769.0" layoutY="408.0" prefHeight="74.0" prefWidth="295.0">
+        <fx:include fx:id="gameInformationView" source="GameInformationView.fxml" />
+    </Pane>
+    <Pane fx:id="leaveGamePane" layoutX="20.0" layoutY="730.0" prefHeight="100.0" prefWidth="300" visible="false">
+        <fx:include fx:id="leaveGameView" source="LeaveGameView.fxml" />
+    </Pane>
+</AnchorPane>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<fx:root fx:id="root" maxHeight="240" maxWidth="200" prefHeight="240" prefWidth="200.0" type="Pane" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="label" layoutX="${root.width / 2 - (label.width / 2)}" style="-fx-text-fill: #8F1D27;" text="0"/> <!--Fehler weil intellij expression binding nicht kennt. Ist aber ok-->
+    <Rectangle fx:id="imageShape" arcHeight="5.0" arcWidth="5.0" height="${root.height - label.height}" layoutY="${label.height}" strokeWidth="0" width="${root.width}"/>
+</fx:root>

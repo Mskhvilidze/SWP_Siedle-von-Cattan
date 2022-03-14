@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<SplitPane dividerPositions="0.6655518394648829" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="600.0" stylesheets="@../../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.popup.YearOfPlentyPresenter">
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="235.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="160.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="182.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <Label layoutX="14.0" layoutY="14.0" text="Erfindung" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                <font>
+                    <Font name="System Bold" size="26.0" />
+                </font>
+            </Label>
+            <Label text="Zwei Rohstoffe auswählen:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+        </AnchorPane>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+            <Pane fx:id="yearOfPlentyLumber" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectYearOfPlentyLumber" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/HolzMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="yearOfPlentyBrick" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectYearOfPlentyBrick" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/LehmMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="yearOfPlentyGrain" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectYearOfPlentyGrain" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/WeizenMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="yearOfPlentyWool" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectYearOfPlentyWool" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/SchafMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="yearOfPlentyOre" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectYearOfPlentyOre" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/ErzMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+        </HBox>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <JFXButton fx:id="playYearOfPlentyCard" defaultButton="true" disable="true" layoutX="28.0" layoutY="24.0" onAction="#onPlayYearOfPlentyCard" text="Ausspielen" AnchorPane.topAnchor="24.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </JFXButton>
+        </AnchorPane>
+    </GridPane>
+    <ImageView fitHeight="327.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../graphics/cards/E_F-Erfindung.png" />
+    </ImageView>
+</SplitPane>

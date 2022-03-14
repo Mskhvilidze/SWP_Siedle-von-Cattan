@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane fx:id="root" prefHeight="871" prefWidth="1600" stylesheets="@../css/swp.css"
+            xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.uol.swp.client.lobby.LobbyPresenter">
+    <Pane fx:id="optionPane" layoutX="450.0" prefHeight="330.0" prefWidth="830.0">
+        <StackPane prefHeight="330.0" prefWidth="830.0">
+            <Pane prefHeight="200.0" prefWidth="200.0">
+                <JFXToggleButton fx:id="togglePrivateButton" layoutX="60.0" layoutY="52.0" mnemonicParsing="false"
+                                 onAction="#togglePrivate" selected="true" text="Privat"/>
+                <JFXSlider fx:id="timerSlider" layoutX="425.0" layoutY="65.0" majorTickUnit="5.0" max="24.0" min="4.0"
+                           prefHeight="14.0" prefWidth="248.0" showTickLabels="true" styleClass="jfx-slider"
+                           value="12.0"/>
+                <JFXComboBox fx:id="victoryPointsPicker" layoutX="56.0" layoutY="197.0" onAction="#selectVictoryPoints"
+                             prefWidth="150.0"/>
+                <JFXComboBox fx:id="lobbySizePicker" layoutX="56.0" layoutY="283.0" onAction="#selectLobbySize"
+                             prefWidth="150.0"/>
+                <Label layoutX="77.0" layoutY="180.0" text="Siegpunkte auswählen"/>
+                <Label layoutX="85.0" layoutY="275.0" text="Lobbygröße auswählen"/>
+                <Label layoutX="498.0" layoutY="110.0" text="Rundentimer auswählen"/>
+                <JFXToggleButton fx:id="toggleDebugButton" layoutX="415.0" layoutY="217.0" mnemonicParsing="false"
+                                 onAction="#toggleDebug" text="Debug-Modus">
+                    <Tooltip prefWidth="300" showDelay="0s"
+                             text="Der Debug-Modus erlaubt es Spielern zusätzliche Funktionen zu nutzen. Diese Funktionen betreffen z.B. die aktuelle Spielphase oder die RessourcenVerteilung per Knopfdruck."
+                             wrapText="true"/>
+                </JFXToggleButton>
+            </Pane>
+            <Region fx:id="optionVeil" prefHeight="200.0" prefWidth="200.0"
+                    style="-fx-background-color: rgba(0, 0, 0, 0.3);" visible="false"/>
+        </StackPane>
+    </Pane>
+    <Pane fx:id="listPane" prefHeight="720.0" prefWidth="450.0">
+        <JFXListView id="lobbyUserList" fx:id="lobbyUsersView" fixedCellSize="100.0" layoutX="75.0" layoutY="53.0"
+                     prefHeight="410.0" prefWidth="300.0"/>
+        <JFXCheckBox fx:id="readyCheckbox" layoutX="182.0" layoutY="469.0" mnemonicParsing="false"
+                     onAction="#onCheckboxChanged" text="Bereit"/>
+        <Label fx:id="readyLabel" layoutX="197.0" layoutY="508.0" text="Label"/>
+        <JFXButton fx:id="leaveButton" layoutX="58.0" layoutY="571.0" mnemonicParsing="false"
+                   onAction="#onLeaveButtonPressed" prefHeight="46.0" prefWidth="124.0" text="Lobby verlassen"/>
+        <JFXButton fx:id="startGameButton" layoutX="270.0" layoutY="570.0" mnemonicParsing="false"
+                   onAction="#onStartButtonPressed" prefHeight="45.0" prefWidth="125.0"
+                   style="-fx-border-color: FABB00; -fx-border-radius: 1px; -fx-border-width: 3px;"
+                   text="Spiel starten"/>
+        <Pane fx:id="invisibleScene" layoutX="32.0" layoutY="548.0" prefHeight="139.0" prefWidth="386.0"
+              styleClass="chat-cell" visible="false">
+            <JFXButton layoutX="255.0" layoutY="30.0" mnemonicParsing="false" onAction="#onConfirmLeaveButtonPressed"
+                       styleClass="jfx-button" text="Verlassen"/>
+            <JFXButton layoutX="245.0" layoutY="86.0" mnemonicParsing="false" onAction="#onCancelLeaveButtonPressed"
+                       styleClass="jfx-button" text="Abbrechen"/>
+            <Label layoutX="43.0" layoutY="41.0" prefHeight="58.0" prefWidth="150.0"
+                   text="&quot;Wenn du die Lobby verlässt, wird sie gelöscht&quot;" textAlignment="CENTER"
+                   wrapText="true"/>
+        </Pane>
+        <JFXButton fx:id="rejoinGameButton" layoutX="144.0" layoutY="662.0" mnemonicParsing="false"
+                   onAction="#onRejoinGame" text="Spiel wieder beitreten."/>
+    </Pane>
+    <Pane layoutX="970.0" layoutY="606.0" nodeOrientation="LEFT_TO_RIGHT" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.rightAnchor="5.0">
+        <fx:include fx:id="chatView" source="ChatView.fxml"/>
+    </Pane>
+    <JFXButton fx:id="addBotButton" layoutX="677.0" layoutY="514.0" mnemonicParsing="false"
+               onAction="#addBotButtonPressed" text="KI Hinzufügen"/>
+</AnchorPane>

@@ -1,0 +1,128 @@
+/* Standard:
+    catan_red: #8F1D27
+    catan_yellow: #FABB00
+    font_main: Garamond Bold
+    font_input: Franklin Gothic Medium
+ */
+/* JFX-Adjustments */
+.jfx-textField-withoutUnderline > .input-line {
+    -fx-pref-height: 0px;
+}
+
+.jfx-textField-withoutUnderline > .input-focused-line {
+    -fx-pref-height: 0px;
+}
+
+JFXButton {
+    -fx-background-color: derive(#8F1D27, -20%);
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+}
+
+.jfx-pane {
+    -fx-background-color: derive(#8F1D27, -20%);
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+    -fx-border-radius: 100px;
+}
+
+.jfx-textArea {
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+}
+
+.jfx-label {
+    -fx-padding: 2px 10px;
+    -fx-background-color: derive(#8F1D27, -20%);
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+    -fx-background-radius: 100px;
+    -fx-border-radius: 100px;
+}
+
+.jfx-label-biggerLetters {
+    -fx-padding: 2px 10px;
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+    -fx-font-size: 18.0;
+    -fx-background-radius: 100px;
+    -fx-border-radius: 100px;
+}
+
+.jfx-label-withoutBackground {
+    -fx-padding: 2px 10px;
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+    -fx-background-radius: 100px;
+    -fx-border-radius: 100px;
+}
+
+.jfx-label-wide {
+    -fx-background-color: derive(#8F1D27, -20%);
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.jfx-label-left {
+    -fx-padding: 2px 8px 3px 5px;
+    -fx-background-color: derive(#8F1D27, -20%);
+    -fx-text-fill: #FABB00;
+    -fx-font-weight: BOLD;
+    -fx-background-radius: 0 100px 100px 0;
+    -fx-border-radius: 0 100px 100px 0;
+}
+
+JFXTextField, JFXPasswordField, JFXComboBox {
+    -jfx-focus-color: #8F1D27;
+}
+
+JFXCheckBox {
+    -jfx-checked-color: #8F1D27;
+}
+
+JFXToggleButton {
+    -jfx-toggle-color: #8F1D27;
+    -jfx-toggle-line-color: #e88993;
+}
+
+JFXSlider .colored-track, JFXSlider .thumb, JFXSlider .animated-thumb {
+    -fx-background-color: #8F1D27;
+}
+
+JFXSlider .slider-value {
+    -fx-fill: #FABB00;
+    -fx-stroke: #FABB00;
+}
+
+/* Other Adjustments */
+.chat-cell {
+    -fx-background-color: derive(#ffffff, -20%);
+    -fx-text-fill: BLACK;
+    -fx-font-weight: BOLD;
+    -fx-border-color: BLACK;
+    -fx-border-width: 2px;
+}
+
+.devcard {
+    -fx-background-color: transparent;
+}
+
+.devcard:selected {
+    -fx-background-color: #ff0000;
+}
+
+.tooltip {
+    -fx-font-size: 15;
+}
+
+#lobbyUserList .list-cell {
+    -fx-font-size: 15.0;
+    -fx-alignment: center;
+}
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12;
+}

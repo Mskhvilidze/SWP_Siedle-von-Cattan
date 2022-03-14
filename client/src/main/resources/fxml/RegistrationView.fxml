@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="root" prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.register.RegistrationPresenter">
+    <ImageView blendMode="MULTIPLY" fitHeight="900.0" fitWidth="1600" pickOnBounds="true">
+        <Image url="@../graphics/Hintergrund_ohneLogo.png" />
+    </ImageView>
+    <JFXTextField id="loginField" fx:id="nameField" layoutX="700.0" layoutY="290.0" prefHeight="40.0" prefWidth="300.0" promptText="Nutzernamen eingeben" style="-fx-font-size: 18" />
+    <JFXTextField fx:id="emailField" layoutX="700.0" layoutY="380.0" prefHeight="40.0" prefWidth="300.0" promptText="E-Mail eingeben" style="-fx-font-size: 18" />
+    <JFXPasswordField id="passwordField" fx:id="passwordField" layoutX="700.0" layoutY="470.0" prefWidth="300.0" promptText="Passwort eingeben" style="-fx-font-size: 18" />
+    <JFXPasswordField id="passwordField" fx:id="confirmPasswordField" layoutX="700.0" layoutY="560.0" prefWidth="300.0" promptText="Passwort wiederholen" style="-fx-font-size: 18" />
+    <JFXButton id="registerButton" defaultButton="true" layoutX="700.0" layoutY="620.0" mnemonicParsing="false" onAction="#onRegisterButtonPressed" style="-fx-font-size: 18" text="Registrieren" />
+    <JFXButton layoutX="873.0" layoutY="620.0" mnemonicParsing="false" onAction="#onCancelButtonPressed" style="-fx-font-size: 18" text="Abbrechen" />
+    <Label layoutX="565.0" layoutY="300.0" style="-fx-font-size: 18; -fx-font-weight: bold" text="Benutzername" />
+    <Label layoutX="597.0" layoutY="389.0" style="-fx-font-size: 18; -fx-font-weight: bold" text="E-Mail" />
+    <Label layoutX="587.0" layoutY="476.0" style="-fx-font-size: 18; -fx-font-weight: bold" text="Passwort" />
+    <Label layoutX="587.0" layoutY="566.0" style="-fx-font-size: 18; -fx-font-weight: bold" text="Passwort" />
+</AnchorPane>

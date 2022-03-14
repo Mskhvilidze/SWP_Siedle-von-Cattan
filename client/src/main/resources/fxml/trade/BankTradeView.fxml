@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.uol.swp.client.game.trade.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="root" prefHeight="366.0" prefWidth="433.0" style="-fx-background-color: #eed18d;"
+            xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.uol.swp.client.game.trade.BankTradePresenter">
+    <Label fx:id="informationLabel" layoutX="8.0" layoutY="344.0" prefHeight="25.0" prefWidth="425.0"
+           style="-fx-text-fill: #8F1D27;" />
+    <GridPane prefHeight="300.0" prefWidth="433.0" style="-fx-background-color: #eed18d;">
+        <rowConstraints>
+            <RowConstraints maxHeight="140.0" minHeight="140.0" prefHeight="140.0" />
+            <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
+            <RowConstraints maxHeight="140.0" minHeight="140.0" prefHeight="140.0" />
+            <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints maxWidth="65.0" minWidth="65.0" prefWidth="67.0" />
+            <ColumnConstraints maxWidth="73.0" minWidth="72.0" prefWidth="73.0" />
+            <ColumnConstraints maxWidth="74.0" minWidth="72.0" prefWidth="73.0" />
+            <ColumnConstraints maxWidth="79.0" minWidth="72.0" prefWidth="73.0" />
+            <ColumnConstraints maxWidth="78.0" minWidth="72.0" prefWidth="73.0" />
+            <ColumnConstraints maxWidth="74.0" minWidth="72.0" prefWidth="73.0" />
+        </columnConstraints>
+        <JFXButton fx:id="startBankTradeButton" layoutX="90.0" layoutY="320.0" mnemonicParsing="false"
+                   onAction="#onStartBankTradeButton" styleClass="jfx-button" stylesheets="@../../css/swp.css"
+                   text="Handeln" GridPane.columnIndex="1" GridPane.rowIndex="3" disable="true" />
+        <JFXTextField editable="false" layoutX="14.0" layoutY="59.0" prefHeight="25.0" prefWidth="46.0"
+                      style="-fx-text-fill: #8F1D27;" text="Bank:" GridPane.columnIndex="1" />
+        <VBox alignment="CENTER" prefHeight="152.0" prefWidth="159.0" spacing="5.0" GridPane.columnIndex="1"
+              GridPane.rowIndex="2">
+            <JFXTextField editable="false" layoutX="14.0" layoutY="187.0" prefHeight="25.0" prefWidth="46.0"
+                          style="-fx-text-fill: #8F1D27;" text="Anbieten:" />
+        </VBox>
+
+        <ResourceControl fx:id="bankLumber" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/HolzMini.png" GridPane.columnIndex="2" onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="bankWool" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/SchafMini.png" GridPane.columnIndex="3"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="bankGrain" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/WeizenMini.png" GridPane.columnIndex="4"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="bankOre" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/ErzMini.png" GridPane.columnIndex="5" onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="bankBrick" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/LehmMini.png" GridPane.columnIndex="6" onMouseClicked="#updateGui" />
+
+        <JFXTextField fx:id="lumberTradeTextField" alignment="CENTER" editable="false" style="-fx-text-fill: #8F1D27;"
+                      text="4:1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <JFXTextField fx:id="woolTradeTextField" alignment="CENTER" editable="false" style="-fx-text-fill: #8F1D27;"
+                      text="4:1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <JFXTextField fx:id="grainTradeTextField" alignment="CENTER" editable="false" style="-fx-text-fill: #8F1D27;"
+                      text="4:1" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+        <JFXTextField fx:id="oreTradeTextField" alignment="CENTER" editable="false" style="-fx-text-fill: #8F1D27;"
+                      text="4:1" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+        <JFXTextField fx:id="brickTradeTextField" alignment="CENTER" editable="false" style="-fx-text-fill: #8F1D27;"
+                      text="4:1" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+
+        <ResourceControl fx:id="offeredLumber" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/HolzMini.png" GridPane.columnIndex="2" GridPane.rowIndex="2"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="offeredWool" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/SchafMini.png" GridPane.columnIndex="3" GridPane.rowIndex="2"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="offeredGrain" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/WeizenMini.png" GridPane.columnIndex="4" GridPane.rowIndex="2"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="offeredOre" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/ErzMini.png" GridPane.columnIndex="5" GridPane.rowIndex="2"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="offeredBrick" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/LehmMini.png" GridPane.columnIndex="6" GridPane.rowIndex="2"
+                         onMouseClicked="#updateGui" />
+
+        <Label fx:id="lumberTradeResourcesLabel" style="-fx-text-fill: #8F1D27;" text="x benötigt"
+               GridPane.columnIndex="2"
+               GridPane.rowIndex="3" visible="false" />
+        <Label fx:id="woolTradeResourcesLabel" style="-fx-text-fill: #8F1D27;" text="x benötigt"
+               GridPane.columnIndex="3"
+               GridPane.rowIndex="3" visible="false" />
+        <Label fx:id="grainTradeResourcesLabel" style="-fx-text-fill: #8F1D27;" text="x benötigt"
+               GridPane.columnIndex="4"
+               GridPane.rowIndex="3" visible="false" />
+        <Label fx:id="oreTradeResourcesLabel" style="-fx-text-fill: #8F1D27;" text="x benötigt" GridPane.columnIndex="5"
+               GridPane.rowIndex="3" visible="false" />
+        <Label fx:id="brickTradeResourcesLabel" style="-fx-text-fill: #8F1D27;" text="x benötigt"
+               GridPane.columnIndex="6"
+               GridPane.rowIndex="3" visible="false" />
+
+    </GridPane>
+    <JFXButton layoutX="408.0" layoutY="2.0" mnemonicParsing="false"
+               onAction="#onCloseButton" stylesheets="@../../css/swp.css"
+               text="X" GridPane.rowIndex="2" />
+</AnchorPane>

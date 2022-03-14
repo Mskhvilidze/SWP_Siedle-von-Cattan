@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane prefHeight="333.0" prefWidth="433.0" style="-fx-background-color: #eed18d;" stylesheets="@../../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.BuyBuildPresenter">
+    <rowConstraints>
+        <RowConstraints maxHeight="33.0" minHeight="33.0" prefHeight="33.0" valignment="CENTER" />
+        <RowConstraints maxHeight="75.0" minHeight="75.0" prefHeight="75.0" />
+        <RowConstraints maxHeight="75.0" minHeight="75.0" prefHeight="75.0" />
+        <RowConstraints maxHeight="75.0" minHeight="75.0" prefHeight="75.0" />
+        <RowConstraints maxHeight="75.0" minHeight="75.0" prefHeight="75.0" />
+        <RowConstraints maxHeight="33.0" minHeight="33.0" prefHeight="33.0" />
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints maxWidth="134.0" minWidth="433.0" prefWidth="433.0" />
+    </columnConstraints>
+    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+        <Label text="Baukosten" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+    </HBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <VBox prefHeight="72.0" prefWidth="304.0">
+            <Label fx:id="roadLabel" text="Straße, Sie haben noch 15 verfügbar.">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/HolzMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/LehmMini.png" />
+                </ImageView>
+                <Label text="(Längste Handelsroute 2 SP)" />
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+            </HBox>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="72.0" prefWidth="128.0">
+            <VBox prefHeight="72.0" prefWidth="55.0" spacing="5.0">
+                <Label text="0 VP">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="buildRoadButton" onAction="#onBuildRoadButton" styleClass="jfx-button" text="bauen" />
+            </VBox>
+            <ImageView fx:id="roadImageView" fitHeight="11.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../graphics/objects/road_yellow.png" />
+            </ImageView>
+        </HBox>
+    </HBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <VBox prefHeight="72.0" prefWidth="304.0">
+            <Label fx:id="settlementLabel" text="Siedlung, Sie haben noch 5 verfügbar.">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/HolzMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/LehmMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/WeizenMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/SchafMini.png" />
+                </ImageView>
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+            </HBox>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="72.0" prefWidth="128.0">
+            <VBox prefHeight="72.0" prefWidth="55.0" spacing="5.0">
+                <Label text="1 VP">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="buildSettlementButton" onAction="#onBuildSettlementButton" styleClass="jfx-button" text="bauen" />
+            </VBox>
+            <ImageView fx:id="settlementImageView" fitHeight="65.0" fitWidth="55.0" pickOnBounds="true">
+                <Image url="@../../graphics/objects/settlement_green.png" />
+            </ImageView>
+        </HBox>
+    </HBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <VBox prefHeight="72.0" prefWidth="304.0">
+            <Label fx:id="cityLabel" text="Stadt, Sie haben noch 4 verfügbar.">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/WeizenMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/WeizenMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/ErzMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/ErzMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/ErzMini.png" />
+                </ImageView>
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+            </HBox>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="72.0" prefWidth="128.0">
+            <VBox prefHeight="72.0" prefWidth="55.0" spacing="5.0">
+                <Label text="2 VP">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="buildCityButton" onAction="#onBuildCityButton" styleClass="jfx-button" text="bauen" />
+            </VBox>
+            <ImageView fx:id="cityImageView" fitHeight="65.0" fitWidth="55.0" pickOnBounds="true">
+                <Image url="@../../graphics/objects/city_green.png" />
+            </ImageView>
+        </HBox>
+    </HBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <VBox prefHeight="72.0" prefWidth="304.0">
+            <Label fx:id="devCardLabel" text="Entwicklungskarte, es gibt noch 25.">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/WeizenMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/SchafMini.png" />
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/ErzMini.png" />
+                </ImageView>
+                <Label text="(Größte Rittermacht 2 SP)" />
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+            </HBox>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="72.0" prefWidth="128.0">
+            <VBox alignment="CENTER" prefHeight="75.0" prefWidth="64.0" spacing="5.0">
+                <Label text="? VP">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="buyDevelopmentButton" onAction="#onBuyDevelopmentButton" styleClass="jfx-button" text="kaufen" />
+            </VBox>
+        </HBox>
+    </HBox>
+</GridPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<VBox stylesheets="@../../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.popup.CardPresenter">
+    <AnchorPane>
+        <Label fx:id="label" alignment="CENTER" prefWidth="260.0" style="-fx-font-size: 20; -fx-font-weight: bold" text="Name benutzt" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+    </AnchorPane>
+    <Pane prefWidth="260.0">
+        <ImageView fx:id="knightImage" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <Image url="@../../graphics/cards/Ritter.png" />
+        </ImageView>
+        <ImageView fx:id="roadImage" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <Image url="@../../graphics/cards/E_F-Strassenbau.png" />
+        </ImageView>
+        <ImageView fx:id="yearOfPlentyImage" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <Image url="@../../graphics/cards/E_F-Erfindung.png" />
+        </ImageView>
+        <ImageView fx:id="monopolyImage" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <Image url="@../../graphics/cards/E_F-Monopol.png" />
+        </ImageView>
+    </Pane>
+</VBox>

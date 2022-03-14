@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.uol.swp.client.game.trade.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="root" prefHeight="366.0" prefWidth="433.0" style="-fx-background-color: #eed18d;"
+            xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.uol.swp.client.game.trade.TradePresenter">
+    <Label fx:id="informationLabel" layoutX="8.0" layoutY="344.0" prefHeight="25.0" prefWidth="425.0"
+           style="-fx-text-fill: #8F1D27;" text="Nicht ausreichend Ressourcen." visible="false"/>
+    <GridPane maxHeight="333.0" maxWidth="433.0" minHeight="333.0" minWidth="433.0" prefHeight="333.0"
+              prefWidth="433.0">
+        <rowConstraints>
+            <RowConstraints maxHeight="130.0" minHeight="153.0" prefHeight="153.0"/>
+            <RowConstraints maxHeight="130.0" minHeight="133.0" prefHeight="152.0"/>
+            <RowConstraints maxHeight="30.0" minHeight="20.0" prefHeight="45.0"/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints maxWidth="72.16" minWidth="72.16" prefWidth="72.16"/>
+            <ColumnConstraints maxWidth="72.16" minWidth="72.16" prefWidth="72.16"/>
+            <ColumnConstraints maxWidth="72.16" minWidth="72.16" prefWidth="72.16"/>
+            <ColumnConstraints maxWidth="72.16" minWidth="72.16" prefWidth="72.16"/>
+            <ColumnConstraints maxWidth="72.16" minWidth="72.16" prefWidth="72.16"/>
+            <ColumnConstraints maxWidth="72.16" minWidth="72.16" prefWidth="72.16"/>
+        </columnConstraints>
+        <JFXButton fx:id="startTradeButton" layoutX="90.0" layoutY="320.0" mnemonicParsing="false"
+                   onAction="#onStartTradeButton" styleClass="jfx-button" stylesheets="@../../css/swp.css"
+                   text="Handeln" GridPane.rowIndex="2" disable="true"/>
+        <JFXTextField editable="false" layoutX="14.0" layoutY="59.0" prefHeight="25.0" prefWidth="46.0"
+                      promptText="Request:" style="-fx-text-fill: #8F1D27;" text="Fordern:"/>
+        <JFXTextField editable="false" layoutX="14.0" layoutY="187.0" prefHeight="25.0" prefWidth="46.0"
+                      promptText="Offer:" style="-fx-text-fill: #8F1D27;" text="Anbieten:" GridPane.rowIndex="1"/>
+
+        <ResourceControl fx:id="requestedLumber" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/HolzMini.png" GridPane.columnIndex="1" onMouseClicked="#updateGui"/>
+        <ResourceControl fx:id="requestedWool" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/SchafMini.png" GridPane.columnIndex="2"
+                         onMouseClicked="#updateGui"/>
+        <ResourceControl fx:id="requestedGrain" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/WeizenMini.png" GridPane.columnIndex="3"
+                         onMouseClicked="#updateGui"/>
+        <ResourceControl fx:id="requestedOre" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/ErzMini.png" GridPane.columnIndex="4" onMouseClicked="#updateGui"/>
+        <ResourceControl fx:id="requestedBrick" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/LehmMini.png" GridPane.columnIndex="5" onMouseClicked="#updateGui"/>
+
+        <ResourceControl fx:id="offeredLumber" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/HolzMini.png" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                         onMouseClicked="#updateGui"/>
+        <ResourceControl fx:id="offeredWool" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/SchafMini.png" GridPane.columnIndex="2" GridPane.rowIndex="1"
+                         onMouseClicked="#updateGui"/>
+        <ResourceControl fx:id="offeredGrain" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/WeizenMini.png" GridPane.columnIndex="3" GridPane.rowIndex="1"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="offeredOre" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/ErzMini.png" GridPane.columnIndex="4" GridPane.rowIndex="1"
+                         onMouseClicked="#updateGui" />
+        <ResourceControl fx:id="offeredBrick" layoutY="14.0" maxHeight="101.0" maxWidth="65.0"
+                         url="@../../graphics/cards/LehmMini.png" GridPane.columnIndex="5" GridPane.rowIndex="1"
+                         onMouseClicked="#updateGui" />
+
+    </GridPane>
+    <JFXButton layoutX="408.0" layoutY="2.0" mnemonicParsing="false"
+               onAction="#onCloseButton" stylesheets="@../../css/swp.css"
+               text="X" GridPane.rowIndex="2" />
+</AnchorPane>

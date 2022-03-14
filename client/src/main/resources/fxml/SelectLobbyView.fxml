@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css/swp.css"
+            xmlns="http://javafx.com/javafx/11" fx:controller="de.uol.swp.client.lobby.SelectLobbyPresenter">
+    <JFXButton mnemonicParsing="false" onAction="#onMainMenuButtonPressed" text="Zurück" AnchorPane.leftAnchor="20.0"
+               AnchorPane.topAnchor="20.0"/>
+    <Label alignment="CENTER" style="-fx-font-size: 20;" styleClass="jfx-label" text="Lobbymenü"
+           AnchorPane.leftAnchor="720.0" AnchorPane.rightAnchor="720.0" AnchorPane.topAnchor="10.0"/>
+    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="0.0" prefWidth="306.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="0.0" prefWidth="76.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.0" minWidth="368.0" prefWidth="368.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1250.0"/>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+            <Label contentDisplay="GRAPHIC_ONLY">
+                <graphic>
+                    <ImageView fitHeight="37.0" fitWidth="37.0" preserveRatio="true">
+                        <Image url="@../graphics/Button_Info.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip prefWidth="300" showDelay="0s"
+                             text="Lobbies können mittels Doppelklick auf die jeweilige Lobby in der untenstehende Liste beigetreten werden. Desweiteren kann über das rechts liegende Textfeld und dem &quot;Lobby Beitreten&quot;-Knopf auch privaten Lobbies beigetreten werden, welche nicht in der unten stehenden Liste angezeigt werden."
+                             wrapText="true"/>
+                </tooltip>
+                <VBox.margin>
+                    <Insets left="20.0" top="5.0"/>
+                </VBox.margin>
+            </Label>
+            <TableView fx:id="lobbyTableView" onMouseClicked="#joinSelectedLobbyClicked" prefHeight="700.0">
+                <columns>
+                    <TableColumn fx:id="lobbyViewColumn" prefWidth="162.0" text="Lobby"/>
+                    <TableColumn fx:id="lobbyPlayerColumn" prefWidth="61.0" text="Spieler"/>
+                    <TableColumn fx:id="lobbyJoinableColumn" prefWidth="61.0" text="Betretbar"/>
+                </columns>
+                <VBox.margin>
+                    <Insets left="20.0"/>
+                </VBox.margin>
+            </TableView>
+        </VBox>
+        <VBox alignment="BOTTOM_RIGHT" spacing="10.0" GridPane.columnIndex="2">
+            <HBox>
+                <VBox alignment="TOP_CENTER" prefHeight="860.0" prefWidth="305.0" spacing="10.0">
+                    <JFXTextField fx:id="joinLobbyField" alignment="CENTER" prefHeight="25.0" prefWidth="200.0" promptText="Lobbynamen eingeben um beizutreten." />
+                    <JFXButton mnemonicParsing="false" onAction="#onJoinLobby" text="Lobby beitreten" />
+                    <HBox fx:id="informationBox">
+                        <ImageView fitHeight="39.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@../graphics/Button_Info.png"/>
+                        </ImageView>
+                        <JFXTextArea editable="false" styleClass="jfx-textField-withoutUnderline"
+                                     text="Klicke mit der linken Maustaste auf eine Lobby, um weitere informationen zu dieser zu erhalten."/>
+                        <VBox.margin>
+                            <Insets top="50.0" />
+                        </VBox.margin>
+                    </HBox>
+                    <Pane fx:id="lobbyInformationPane" prefHeight="484.0" prefWidth="305.0" styleClass="jfx-button" visible="false">
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="9.0" prefHeight="465.0" prefWidth="284.0"
+                              spacing="15.0" style="-fx-background-color: rgba(0,0,0,0.6);">
+                            <JFXTextField fx:id="lobbyNameTextField" alignment="CENTER" editable="false"
+                                          promptText="LobbyName" styleClass="jfx-label-wide">
+                            </JFXTextField>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <Label styleClass="jfx-label-left" text="Lobby Besitzer: "/>
+                                <JFXTextField fx:id="lobbyOwnerTextLabel" editable="false" prefHeight="25.0"
+                                              prefWidth="136.0" promptText="LobbyBesitzer"
+                                              style="-fx-text-fill: FABB00;"
+                                              styleClass="jfx-textField-withoutUnderline"/>
+                            </HBox>
+                            <VBox prefHeight="162.0" prefWidth="284.0">
+                                <Label styleClass="jfx-label-left" text="Spieler in der Lobby: "/>
+                                <JFXListView fx:id="lobbyPlayersListView" prefHeight="141.0" prefWidth="274.0"
+                                             styleClass="chat-cell">
+                                    <VBox.margin>
+                                        <Insets left="5.0" right="5.0" top="5.0"/>
+                                    </VBox.margin>
+                                </JFXListView>
+                            </VBox>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <Label styleClass="jfx-label-left" text="davon bereit: "/>
+                                <JFXTextField fx:id="lobbyReadyTextField" editable="false" prefHeight="25.0"
+                                              prefWidth="171.0" promptText="bereit" style="-fx-text-fill: FABB00;"
+                                              styleClass="jfx-textField-withoutUnderline"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <Label styleClass="jfx-label-left" text="DebugModus: "/>
+                                <JFXTextField fx:id="lobbyDebugTextField" editable="false" prefHeight="25.0"
+                                              prefWidth="180.0" promptText="Zeit" style="-fx-text-fill: FABB00;"
+                                              styleClass="jfx-textField-withoutUnderline"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <Label styleClass="jfx-label-left" text="Rundenzeit: "/>
+                                <JFXTextField fx:id="lobbyTimerTextField" editable="false" prefHeight="25.0"
+                                              prefWidth="180.0" promptText="Zeit" style="-fx-text-fill: FABB00;"
+                                              styleClass="jfx-textField-withoutUnderline"/>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <Label styleClass="jfx-label-left" text="SiegPunkte: "/>
+                                <JFXTextField fx:id="lobbyVictoryPointsTextField" editable="false" prefHeight="25.0"
+                                              prefWidth="181.0" promptText="Punkte" style="-fx-text-fill: FABB00;"
+                                              styleClass="jfx-textField-withoutUnderline"/>
+                            </HBox>
+                            <JFXButton fx:id="joinClickedLobbyButton" mnemonicParsing="false"
+                                       onAction="#onJoinClickedLobby" text="Lobby beitreten"/>
+                        </VBox>
+                    </Pane>
+                    <HBox.margin>
+                        <Insets top="80.0" />
+                    </HBox.margin>
+                </VBox>
+            </HBox>
+            <padding>
+                <Insets bottom="70.0" right="20.0" />
+            </padding>
+        </VBox>
+        <VBox spacing="10.0" GridPane.columnIndex="3">
+            <JFXTextField fx:id="createLobbyField" alignment="CENTER" prefHeight="25.0" prefWidth="284.0" promptText="Lobbynamen zum Erstellen eingeben." />
+            <HBox alignment="CENTER" spacing="10.0">
+                <JFXButton mnemonicParsing="false" onAction="#onCreateLobby" text="Lobby erstellen" />
+                <JFXCheckBox fx:id="privateCheckbox" mnemonicParsing="false" text="Privat" />
+            </HBox>
+            <Label contentDisplay="GRAPHIC_ONLY">
+                <graphic>
+                    <ImageView fitHeight="37.0" fitWidth="37.0" preserveRatio="true">
+                        <Image url="@../graphics/Button_Info.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip prefWidth="300" showDelay="0s"
+                             text="Eine eigene Lobby kann über das oben stehende Textfeld und dem &quot;Lobby erstellen&quot;-Knopf erstellt werden. Wenn die Lobby nicht in der Übersicht erscheinen soll, so muss die Lobby als &quot;Privat&quot; erstellt werden. Möglich über die Checkbox neben dem Knopf zum Erstellen. Der Name einer Lobby darf keine Sonderzeichen enthalten oder länger als 10 Zeichen sein."
+                             wrapText="true"/>
+                </tooltip>
+                <VBox.margin>
+                    <Insets top="50.0" />
+                </VBox.margin>
+            </Label>
+            <GridPane.margin>
+                <Insets top="80.0" />
+            </GridPane.margin>
+        </VBox>
+    </GridPane>
+    <Pane AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="5.0">
+        <fx:include fx:id="chatView" source="ChatView.fxml"/>
+    </Pane>
+</AnchorPane>

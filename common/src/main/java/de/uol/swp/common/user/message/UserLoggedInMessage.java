@@ -1,0 +1,57 @@
+package de.uol.swp.common.user.message;
+
+import de.uol.swp.common.message.AbstractServerMessage;
+
+import java.util.Objects;
+
+/**
+ * A message to indicate a newly logged in user
+ * <p>
+ * This message is used to automatically update the user lists of every connected
+ * client as soon as a user successfully logs in
+ *
+ * @author Marco Grawunder
+ * @since 2017-03-17
+ */
+public class UserLoggedInMessage extends AbstractServerMessage {
+
+    private static final long serialVersionUID = -2071886836547126480L;
+    private final String username;
+
+    /**
+     * Constructor
+     *
+     * @param username the username of the newly logged in user
+     * @since 2017-03-17
+     */
+    public UserLoggedInMessage(String username) {
+        this.username = username;
+    }
+
+    /**
+     * Getter for the username
+     *
+     * @return a String containing the username
+     * @since 2017-03-17
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        UserLoggedInMessage that = (UserLoggedInMessage) object;
+        return Objects.equals(username, that.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
+    }
+}

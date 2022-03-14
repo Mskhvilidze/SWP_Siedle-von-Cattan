@@ -1,0 +1,38 @@
+.list-cell:even,
+.list-cell:odd {
+    -fx-background-color: white;
+}
+
+.list-cell:selected:odd,
+.list-cell:selected:even {
+    -fx-background-color: -fx-background;
+}
+
+.chat-text-field {
+    -fx-padding: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: derive(#8F1D27, -20%);
+    -fx-border-width: 2;
+    -fx-background-color: #eab06c;
+    -fx-background-radius: 5;
+    -fx-prompt-text-fill: black;
+    -fx-text-fill: black;
+}
+
+.jfx-button {
+    -fx-background-color: derive(#8F1D27, -20%);
+    -fx-shape: "M65.44,26.49,7.27.91A4.83,4.83,0,0,0,.5,5.33V56.48A4.83,4.83,0,0,0,7.27,60.9L65.44,35.33A4.83,4.83,0,0,0,65.44,26.49Z";
+}
+
+.chat-cell {
+    -fx-background-color: derive(#ffffff, -20%);
+    -fx-text-fill: BLACK;
+    -fx-font-weight: BOLD;
+    -fx-border-color: BLACK;
+    -fx-border-width: 2px;
+}
+
+.chatMessagesView {
+    -fx-border-color: #000;
+    -fx-border-width: 2px;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" fx:id="root" stylesheets="@../../css/swp.css" type="Pane" visible="false"
+         xmlns="http://javafx.com/javafx/11">
+    <VBox fx:id="container" prefHeight="120.0" prefWidth="145.0">
+        <HBox>
+            <Label fx:id="playerName" styleClass="jfx-label-left" text="Player1">
+                <HBox.margin>
+                    <Insets bottom="4.0"/>
+                </HBox.margin>
+            </Label>
+            <Rectangle fx:id="playerColor" arcHeight="5.0" arcWidth="5.0" fill="AQUAMARINE" height="22.0" stroke="BLACK"
+                       strokeType="INSIDE" width="15.0">
+                <HBox.margin>
+                    <Insets left="2.0"/>
+                </HBox.margin>
+            </Rectangle>
+        </HBox>
+        <HBox>
+            <Label fx:id="victoryPointLabel" prefWidth="50.0" styleClass="jfx-label-left" text="SP: 0">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Label>
+            <ImageView fx:id="knightBonusDisplay" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true"
+                       preserveRatio="true" visible="false">
+                <Image url="@../../graphics/etc/knight.png"/>
+            </ImageView>
+            <ImageView fx:id="longestRoadBonusDisplay" fitHeight="20.0" fitWidth="30.0" pickOnBounds="true"
+                       preserveRatio="true" visible="false">
+                <Image url="@../../graphics/etc/road.png"/>
+            </ImageView>
+            <VBox.margin>
+                <Insets bottom="2.0"/>
+            </VBox.margin>
+        </HBox>
+        <Label fx:id="resourceAmountLabel" prefWidth="100.0" styleClass="jfx-label-left" text="Ressourcen: 0">
+            <padding>
+                <Insets bottom="2.0"/>
+            </padding>
+            <VBox.margin>
+                <Insets bottom="2.0"/>
+            </VBox.margin>
+        </Label>
+        <Label fx:id="devCardAmountLabel" layoutX="10.0" layoutY="44.0" prefWidth="145.0" styleClass="jfx-label-left"
+               text="Entwicklungskarten: 0"/>
+    </VBox>
+</fx:root>

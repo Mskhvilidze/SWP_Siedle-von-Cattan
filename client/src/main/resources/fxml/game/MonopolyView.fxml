@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.popup.MonopolyPresenter"
+           dividerPositions="0.6655518394648829" maxHeight="-Infinity" maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="600.0"
+           stylesheets="@../../css/swp.css" xmlns="http://javafx.com/javafx/11">
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="235.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="160.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="182.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <Label layoutX="14.0" layoutY="14.0" text="Monopol" textAlignment="CENTER" AnchorPane.leftAnchor="10.0"
+                   AnchorPane.topAnchor="10.0">
+                <font>
+                    <Font name="System Bold" size="26.0" />
+                </font>
+            </Label>
+            <Label text="Rohstoff auswählen:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+        </AnchorPane>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+            <Pane fx:id="monopolyLumber" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectMonopolyLumber" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/HolzMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="monopolyBrick" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectMonopolyBrick" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/LehmMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="monopolyGrain" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectMonopolyGrain" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/WeizenMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="monopolyWool" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectMonopolyWool" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/SchafMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+            <Pane fx:id="monopolyOre" prefHeight="200.0" prefWidth="200.0" styleClass="devcard">
+                <ImageView fitWidth="65.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#onSelectMonopolyOre" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../graphics/cards/ErzMini.png" />
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </Pane>
+        </HBox>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <JFXButton fx:id="playMonopolyCard" defaultButton="true" disable="true" layoutX="28.0" layoutY="28.0"
+                       onAction="#onPlayMonopolyCard" text="Ausspielen"
+                       AnchorPane.topAnchor="28.0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </JFXButton>
+        </AnchorPane>
+    </GridPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+        <ImageView fitHeight="327.0" fitWidth="197.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Image url="@../../graphics/cards/E_F-Monopol.png" />
+        </ImageView>
+    </AnchorPane>
+</SplitPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="root" prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.profile.ProfilePresenter">
+    <Label alignment="CENTER" layoutX="76.0" layoutY="20.0" style="-fx-font-size: 20;" styleClass="jfx-label" text="Profil und Einstellungen" AnchorPane.leftAnchor="670.0" AnchorPane.rightAnchor="670.0" AnchorPane.topAnchor="10.0" />
+    <Pane layoutY="70.0" style="-fx-border-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1420.0" AnchorPane.topAnchor="75.0">
+        <JFXButton fx:id="profileMenu" layoutX="20.0" layoutY="15.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#onPlayerInfoRequestButtonPressed" prefWidth="150.0" styleClass="jfx-button" stylesheets="@../css/swp.css" text="Spielerdaten" />
+        <JFXButton fx:id="username" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#onEditButtonPressed" prefWidth="150.0" text="Nutzernamen ändern" />
+        <JFXButton fx:id="password" layoutX="20.0" layoutY="85.0" mnemonicParsing="false" onAction="#onEditButtonPressed" prefWidth="150.0" text="Passwort ändern" />
+        <JFXButton fx:id="email" layoutX="20.0" layoutY="120.0" mnemonicParsing="false" onAction="#onEditButtonPressed" prefWidth="150.0" text="E-Mail ändern" />
+        <JFXButton fx:id="deleteAccount" layoutX="20.0" layoutY="155.0" mnemonicParsing="false" onAction="#onDeleteAccountButtonPressed" prefWidth="150.0" text="Account löschen" />
+    </Pane>
+    <Pane layoutX="250.0" layoutY="75.0" prefHeight="825.0" prefWidth="1349.0" style="-fx-border-color: grey;" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+        <Pane fx:id="usernamePane" layoutX="50.0" layoutY="50.0" maxHeight="200.0" maxWidth="300.0" minHeight="200.0" minWidth="300.0" prefHeight="200.0" prefWidth="300.0" visible="false">
+            <JFXButton fx:id="confirmUsernameButton" layoutX="45.0" layoutY="155.0" onAction="#onConfirmUsernameButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Bestätigen" />
+            <JFXButton fx:id="cancelUsername" layoutX="175.0" layoutY="155.0" onAction="#onCancelButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Abbrechen" />
+            <JFXTextField fx:id="newUsernameField" layoutX="60.0" layoutY="70.0" prefHeight="25.0" prefWidth="180.0" promptText="Nutzername" text="Neuer Nutzername" />
+        </Pane>
+        <Pane fx:id="passwordPane" layoutX="50.0" layoutY="50.0" maxHeight="200.0" maxWidth="300.0" minHeight="200.0" minWidth="300.0" prefHeight="200.0" prefWidth="335.0" visible="false">
+            <JFXButton fx:id="confirmPasswordButton" layoutX="45.0" layoutY="171.0" onAction="#onConfirmPasswordButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Bestätigen" />
+            <JFXButton fx:id="cancelPassword" layoutX="175.0" layoutY="171.0" onAction="#onCancelButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Abbrechen" />
+            <JFXPasswordField fx:id="currentPasswordField" layoutX="45.0" layoutY="20.0" prefHeight="25.0" prefWidth="210.0" promptText="Aktuelles Passwort" />
+            <JFXPasswordField fx:id="newPasswordField" layoutX="45.0" layoutY="70.0" prefHeight="25.0" prefWidth="210.0" promptText="Neues Passwort" />
+            <JFXPasswordField fx:id="confirmPasswordField" layoutX="45.0" layoutY="120.0" prefHeight="25.0" prefWidth="210.0" promptText="Passwort Wiederholen" />
+        </Pane>
+        <Pane fx:id="emailPane" layoutX="50.0" layoutY="50.0" maxHeight="200.0" maxWidth="300.0" minHeight="200.0" minWidth="300.0" prefHeight="200.0" prefWidth="300.0" visible="false">
+            <JFXButton fx:id="confirmEmailButton" layoutX="45.0" layoutY="155.0" onAction="#onConfirmEmailButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Bestätigen" />
+            <JFXButton fx:id="cancelEmail" layoutX="175.0" layoutY="155.0" onAction="#onCancelButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Abbrechen" />
+            <JFXTextField fx:id="newEmailField" layoutX="60.0" layoutY="70.0" prefHeight="25.0" prefWidth="180.0" promptText="Neue E-Mail" />
+        </Pane>
+        <Pane fx:id="deleteAccountPane" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="300.0" visible="false">
+            <JFXButton fx:id="yes" layoutX="45.0" layoutY="155.0" onAction="#onConfirmDeleteAccountButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Bestätigen" translateX="5.0" />
+            <JFXButton fx:id="no" layoutX="175.0" layoutY="155.0" onAction="#onCancelButtonPressed" prefHeight="30.0" prefWidth="80.0" text="Abbrechen" />
+            <Label alignment="CENTER" layoutX="16.0" prefHeight="69.0" prefWidth="269.0" style="-fx-border-color: #8F1D27; -fx-border-radius: 3; -fx-border-image-insets: 5; -fx-font-size: 14" text="Um Ihren Account dauerhaft zu löschen, geben Sie bitte Ihr Passwort ein" textAlignment="CENTER" wrapText="true" />
+            <JFXPasswordField fx:id="validatePasswordField" layoutX="61.0" layoutY="88.0" prefHeight="25.0" prefWidth="180.0" promptText="Passwort" />
+        </Pane>
+        <Pane fx:id="panePlayerInfo" cache="true" layoutX="14.0" layoutY="14.0" prefHeight="516.0" prefWidth="365.0"
+              visible="false">
+            <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="30.0" prefWidth="124.0"
+                   styleClass="jfx-label" text="Spielerprofil" textFill="#fabb00" translateX="120.0"/>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="90.0" prefHeight="30.0" prefWidth="90.0"
+                   styleClass="jfx-label" text="Name"/>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="170.0" prefHeight="30.0" prefWidth="90.0"
+                   styleClass="jfx-label" text="E-Mail"/>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="250.0" prefHeight="30.0" prefWidth="90.0"
+                   styleClass="jfx-label" text="Gewinn"/>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="330.0" prefHeight="30.0" prefWidth="90.0"
+                   styleClass="jfx-label" text="Verlust"/>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="410.0" prefHeight="30.0" prefWidth="90.0"
+                   styleClass="jfx-label" text="Verhältnis"/>
+            <Label fx:id="userName" alignment="CENTER" layoutX="140.0" layoutY="90.0" prefHeight="30.0"
+                   prefWidth="220.0" styleClass="jfx-label" underline="true"/>
+            <Label fx:id="eMail" alignment="CENTER" layoutX="140.0" layoutY="170.0" prefHeight="30.0" prefWidth="220.0"
+                   styleClass="jfx-label" underline="true"/>
+            <Label fx:id="won" alignment="CENTER" layoutX="140.0" layoutY="250.0" prefHeight="30.0" prefWidth="220.0"
+                   styleClass="jfx-label" underline="true"/>
+            <Label fx:id="lost" alignment="CENTER" layoutX="140.0" layoutY="330.0" prefHeight="30.0" prefWidth="220.0"
+                   styleClass="jfx-label" underline="true"/>
+            <Label fx:id="ratio" alignment="CENTER" layoutX="140.0" layoutY="410.0" prefHeight="30.0" prefWidth="220.0" styleClass="jfx-label" underline="true" />
+            <JFXButton fx:id="close" layoutX="15.0" layoutY="15.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#onClosePlayerInfo" prefHeight="30.0" prefWidth="100.0" styleClass="jfx-button" stylesheets="@../css/swp.css" text="schließen" translateX="125.0" translateY="450.0" />
+        </Pane>
+    </Pane>
+    <JFXButton layoutX="1.0" layoutY="14.0" mnemonicParsing="false" onAction="#onMenuButtonPressed" text="Zurück" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+    <Region fx:id="veil" prefHeight="900.0" prefWidth="180.0" style="-fx-background-color: rgba(0, 0, 0, 0.3)" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1420.0" AnchorPane.topAnchor="0.0" />
+</AnchorPane>

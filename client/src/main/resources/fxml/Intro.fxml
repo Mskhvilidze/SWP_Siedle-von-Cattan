@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="900.0" prefWidth="1600.0"
+            stylesheets="@../css/swp.css" xmlns="http://javafx.com/javafx/11"
+            fx:controller="de.uol.swp.client.intro.IntroPresenter">
+    <Label alignment="CENTER" layoutX="607.0" layoutY="15.0" style="-fx-font-size: 20;" styleClass="jfx-label"
+           text="Regelwerk" AnchorPane.leftAnchor="730.0" AnchorPane.rightAnchor="730.0" AnchorPane.topAnchor="10.0"/>
+    <JFXButton mnemonicParsing="false" onAction="#onMenuButtonPressed" styleClass="jfx-button"
+               stylesheets="@../css/swp.css" text="Zurück" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0"/>
+    <ScrollPane id="scroll-pane" prefHeight="740.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="100.0">
+        <VBox id="vbox" fx:id="pnl_scroll" prefHeight="3598.0">
+            <Label text="Spiel Anfang">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="58.0" prefWidth="782.0"
+                   text="• Jeder Spieler verfügt über alle Spielfiguren einer Farbe: 5 Siedlungen, 4 Städte und 15 Straßen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="64.0"
+                   text="• Innerhalb der ersten zwei runden setzt jeder Spieler pro runde eine Siedlung mit einer Straße an eine ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="109.0"
+                   text="  beliebige Stelle (mindestens zwei Punkte von der nächsten Siedlung entfernt) auf dem Spielfeld.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="64.0" prefHeight="58.0" prefWidth="1262.0"
+                   text="• Vor der dritten Runde wählt jeder Spieler eine seiner Siedlungen wofür er alle Ressourcen erhält, die an diese angrenzen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="122.0"
+                   text="• Die Kosten für das Bauen einer Straße, Siedlung, Stadt und für das Erhalten einer Entwicklungskarte ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="149.0" text="  sind unten im Spielmenü sichtbar.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="11.0" text="Spiel Ablauf">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="64.0" prefHeight="58.0" prefWidth="1247.0"
+                   text="Welcher Spieler mit dem Spiel beginnt wird zufällig bestimmt. Danach folgt jeder Zug dem folgenden Muster:">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="122.0" prefHeight="27.0" prefWidth="829.0"
+                   text="  1. Die Rohstofferträge des Zuges werden ausgewürfelt (Gilt für alle Spieler).">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="122.0"
+                   text="  2. Handelsphase (Nur der Spieler, der am Zug ist, kann Handeln / Angebote machen)">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="122.0" text="  3. Bau / Kaufphase.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="149.0"
+                   text="Zusätzlich: Er kann zu einem beliebigen Zeitpunkt seines Zuges (auch vor dem Würfeln) eine seiner Entwicklungskarten ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="149.0"
+                   text="ausspielen. Danach ist sein linker Nachbar an der Reihe; dieser setzt das Spiel mit Aktion 1 fort.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="288.0" text="1.Rohstoffe">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="480.0"
+                   text="• Nachdem die Rohstofferträge ausgewürfelt wurden erhält jeder Spieler die Rohstoffe für die ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="480.0"
+                   text="  jeweilige Augenzahl. Ein Spieler erhält Rohstoffe, wenn eine Siedlung oder Stadt an ein Gebiet mit ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="587.0"
+                   text="  der Gewürfelten Augenzahl angrenzt. Pro angrenzender Siedlung wird eine Karte vom jeweiligen ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="641.0"
+                   text="  Rohstoff vergeben und pro angrenzender Stadt werden zwei Karten vom jeweiligen Rohstoff vergeben.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="534.0" text="2. Handel">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="587.0" prefHeight="27.0" prefWidth="992.0"
+                   text="  a.) Binnenhandel: Der Spieler kann Rohstoffe mit anderen Spielern tauschen. Er kann angeben was er tauschen möchte">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="641.0"
+                   text="  und andere Spieler können gegenangebote machen.(Es kann nur mit dem Spieler gehandelt werden der am Zug ist)">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="587.0" text="  b.) Seehandel : Der Spieler kann auch mit der Bank handeln. ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="775.0"
+                   text="  Er kann immer 4:1 tauschen, wenn er an einem Hafen ist 3:1 und an einem Spezial-Hafen 2:1">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="695.0" text="3. Bauen">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="64.0" prefHeight="58.0" prefWidth="747.0"
+                   text="Um zu Bauen muss der Spieler die nötigen Rohstoffe an die Bank abgeben.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="909.0" prefHeight="58.0" prefWidth="528.0"
+                   text="Straße ➔ erfordert (1x)Lehm + (1x)Holz" underline="true">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="775.0"
+                   text="• Eine Straße darf nur an einer Kreuzung gebaut werden, an die eine eigene Straße, Siedlung oder Stadt grenzt">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1025.0" text="  und auf der keine fremde Siedlung oder Stadt steht.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="967.0" prefHeight="58.0" prefWidth="667.0"
+                   text="Siedlung ➔ erfordert (1x)Holz + (1x)Wolle + (1x)Getreide" underline="true">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1025.0"
+                   text="• Eine Siedlung muss auf einer Kreuzung gebaut werden, zu der mindestens eine Straße führt.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1137.0" prefHeight="27.0" prefWidth="1108.0"
+                   text="• Eine Siedlung darf nur dann gebaut werden, wenn die drei angrenzenden Kreuzungen nicht von Siedlungen / Städten besetzt sind.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1164.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Der Besitzer erhält die Rohstofferträge aus den anliegenden Länderfeldern. (jeweils 1x).">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1191.0" prefHeight="46.0" prefWidth="1040.0"
+                   text="Jede Siedlung zählt 1 Siegespunkt.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1079.0" prefHeight="58.0" prefWidth="814.0"
+                   text="Stadt ➔ erfordert (3x)Holz + (2x)Getreide" underline="true">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1137.0"
+                   text="• Ein Spieler kann eine bestehende Siedlung gegen eine Stadt austauschen (Die Siedlung kehr zum Vorrat zurück).">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1164.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Für eine Stadt erhält der Spieler doppelt so viele Rohstoffe: je zwei Rohstoffkarten.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1303.0" prefHeight="46.0" prefWidth="256.0"
+                   text="Jede Stadt zählt 2 Siegespunkte.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1245.0" prefHeight="58.0" prefWidth="814.0"
+                   text="Entwicklungskarte ➔ erfordert (1x)Erz + (1x)Wolle + (1x)Getreide" underline="true">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1330.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Der Spieler erhält eine zufällige Karte. Dabei gibt es drei verschiedene Arten von Karten.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1442.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Der Spieler kann die Karte die er gekauft hat nicht im gleichen Zug spielen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="909.0" prefHeight="58.0" prefWidth="747.0" text="1. Ritter" underline="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1164.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Wer eine Ritterkarte ausspielt, versetzt den Räuber.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1527.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Ausgespielte Ritterkarten bleiben offen vor dem Spieler liegen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1469.0" prefHeight="58.0" prefWidth="747.0" text="2. Fortschritt"
+                   underline="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1527.0" prefHeight="27.0" prefWidth="1040.0" text="  a.) Monopol">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2848.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="      Der Spieler bekommt alle Rohstoffe einer von ihm bestimmten Art von seinen Gegnern. ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="1040.0"
+                   text="      Die anderen Spieler können sich nicht dagegen wehren.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1527.0" prefHeight="27.0" prefWidth="1040.0" text="  a.) Entwicklung">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2848.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="      Der Spieler erhält zwei beliebige Rohstoffkarten von der Bank, es können sowohl ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2848.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="      zwei verschiedene als auch zwei der gleichen Art sein.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1639.0" prefHeight="27.0" prefWidth="1040.0" text="  a.) Straßenbau">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1812.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="      Der Spieler darf regelkonform zwei Straßen bauen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1581.0" prefHeight="58.0" prefWidth="747.0" text="3. Siegespunkte"
+                   underline="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1554.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Karten mit Siegespunkten werden geheimgehalten und erst aufgedeckt wenn ein Spieler 10 Punkte erreicht.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="856.0" text="4. Sonderregelungen">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1384.0" prefHeight="58.0" prefWidth="814.0" text="Räuber" underline="true">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1805.0" prefHeight="50.0" prefWidth="1040.0"
+                   text="• Würfelt der Spieler, der an der Reihe ist, eine „7“, so erhält keinSpieler Rohstofferträge.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1469.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Alle Spieler, die mehr als 7 Rohstoffkarten besitzen, wählen dieHälfte ihrer Rohstoffkarten aus und legen diese ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1442.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  zurück in denVorrat. Bei ungeraden Zahlen wird zu Gunsten des betroffenenSpielers abgerundet.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="64.0" prefHeight="58.0" prefWidth="747.0"
+                   text="Danach muss der Spieler den Räuber versetzen:">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2001.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  1. Der Spieler muss den Räuber auf ein anderes Landfeld versetzen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2028.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  2. Der Spieler Stiehlt eine zufällige Rohstoffkarte von seinem Ziel.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2055.0" prefHeight="58.0" prefWidth="902.0"
+                   text="Der Räuber steht von nun an auf dem Landfeld und es werden dafür keine Rohstofferträge vergeben.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1885.0" prefHeight="58.0" prefWidth="814.0" text="Sonderkarten"
+                   underline="true">
+                <font>
+                    <Font size="24.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1943.0" prefHeight="50.0" prefWidth="1040.0"
+                   text="Es gibt zwei Sonderkarten im Spiel.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2275.0" prefHeight="50.0" prefWidth="1040.0" text="1. Längste Handelsstraße"
+                   underline="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2132.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Sobald ein Spieler einen durchgehenden Straßenzug (Abzweigungen zählen nicht) aus mindestens 5 Einzelstraßen ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2375.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  besitzt, die nicht von einer fremden Siedlung oder Stadt unterbrochen wird, erhält er die Sonder-Siegpunktkarte">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2402.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  Längste Handelsstraße. Gelingt es einem anderen Spieler, eine längere Straße als der aktuelle Besitzer">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2429.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  zu bauen, erhält dieser sofort die Sonderkarte.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2159.0" prefHeight="58.0" prefWidth="902.0"
+                   text="Der Besitz der Längsten Handelsstraße ist 2 Siegpunkte wert.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2325.0" prefHeight="50.0" prefWidth="1040.0" text="2. Größte Rittermacht"
+                   underline="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2375.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Wer zuerst 3 Ritterkarten offen vor sich liegen hat, erhält die Sonderkarte Größte Rittermacht">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2429.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="• Sobald ein anderer Spieler mehr Ritterkartenoffen vor sich liegen hat als der aktuelle Besitzerder ">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2618.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="  Größten Rittermacht, so erhält er sofortdie Sonderkarte">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2483.0" prefHeight="58.0" prefWidth="902.0"
+                   text="Der Besitz der Größten Rittermacht ist 2 Siegpunkte wert.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="1832.0" text="Spiel Ende">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2618.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="Das Spiel endet mit dem Zug, in dem ein Spieler 10 oder mehrSiegpunkte erreicht">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2618.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="Um zu gewinnen, muss ein Spieler an derReihe sein und in seinem Zug mindestens 10 Siegpunkte erreichen/besitzen.">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2730.0" text="Spiel Tipps">
+                <font>
+                    <Font size="36.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="2956.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="1. Lass dich nicht von der 6 &amp; 8 verwirren, sondern setze auf die höchste gesamtchance">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3063.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="2. Jage in der Anfangsphase Getreide und Holz (Diese werden häufig benötigt und sind oft kanpp)">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3090.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="3. Beobachte die anderen Spieler von Anfang an">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3117.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="4. Bau sehr früh weitere Siedlungen und Straßen aber warte etwas mit den Städten">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3117.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="5. Verschwende deine Rohstoffe niemals für Straßen die ins Nichts führen">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3144.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="6. Behalte die Rohstoffe deiner Gegner im Auge und nutze mängel aus">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3198.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="7. Investiere in Entwicklungskarten">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="3198.0" prefHeight="27.0" prefWidth="1040.0"
+                   text="8. Jage die längste Handelsstraße zur richtigen Zeit">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

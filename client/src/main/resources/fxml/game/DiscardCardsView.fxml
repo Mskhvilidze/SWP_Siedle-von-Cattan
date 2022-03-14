@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.uol.swp.client.game.trade.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="615.0" style="-fx-background-color: rgba(0,0,0,0.6);" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.game.popup.DiscardCardsPresenter">
+
+    <Label fx:id="discardMessage" alignment="CENTER" layoutX="-1.0" layoutY="8.0" prefHeight="38.0" prefWidth="615.0" style="-fx-text-fill: #FABB00" textAlignment="CENTER" AnchorPane.leftAnchor="-1.0">
+        <font>
+            <Font size="26.0" />
+        </font>
+    </Label>
+    <Label fx:id="responseMessage" alignment="CENTER" layoutY="161.0" prefHeight="38.0" prefWidth="549.0" style="-fx-text-fill: #FABB00" textAlignment="CENTER" AnchorPane.leftAnchor="0.0">
+        <font>
+            <Font size="26.0" />
+        </font>
+    </Label>
+
+    <ResourceControl fx:id="discardLumber" editable="true" fontSize="18" layoutX="183.0" layoutY="57.0" onMouseClicked="#checkCondition" prefHeight="87.0" prefWidth="50.0" url="@../../graphics/cards/HolzMini.png" />
+    <ResourceControl fx:id="discardWool" editable="true" fontSize="18" layoutX="233.0" layoutY="57.0" onMouseClicked="#checkCondition" prefHeight="87.0" prefWidth="50.0" url="@../../graphics/cards/SchafMini.png" />
+    <ResourceControl fx:id="discardGrain" editable="true" fontSize="18" layoutX="283.0" layoutY="57.0" onMouseClicked="#checkCondition" prefHeight="87.0" prefWidth="50.0" url="@../../graphics/cards/WeizenMini.png" />
+    <ResourceControl fx:id="discardOre" editable="true" fontSize="18" layoutX="333.0" layoutY="57.0" onMouseClicked="#checkCondition" prefHeight="87.0" prefWidth="50.0" url="@../../graphics/cards/ErzMini.png" />
+    <ResourceControl fx:id="discardBrick" editable="true" fontSize="18" layoutX="383.0" layoutY="57.0" onMouseClicked="#checkCondition" prefHeight="87.0" prefWidth="50.0" url="@../../graphics/cards/LehmMini.png" />
+
+    <JFXButton fx:id="acceptDiscard" disable="true" layoutX="549.0" layoutY="168.0" onAction="#onAcceptDiscardButtonPressed" text="Abgeben" />
+
+</AnchorPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" cacheShape="false" minHeight="0.0" minWidth="0.0" prefHeight="74.0"
+            prefWidth="295.0" xmlns="http://javafx.com/javafx/11"
+            fx:controller="de.uol.swp.client.game.GameInformationPresenter">
+   <Pane prefHeight="74.0" prefWidth="295.0"
+         style="-fx-border-radius: 2px; -fx-border-color: #FABB00; -fx-border-width: 4px; -fx-background-color: #8F1D27; -fx-background-radius: 5px;"
+         stylesheets="@../../css/swp.css">
+      <children>
+         <Label fx:id="informationTurnLabel" layoutX="14.0" layoutY="5.0" prefHeight="23.0" prefWidth="264.0"
+                styleClass="jfx-textArea" stylesheets="@../../css/swp.css" text="Player"/>
+         <Label fx:id="informationStateLabel" layoutX="14.0" layoutY="25.0" prefHeight="23.0" prefWidth="264.0"
+                styleClass="jfx-textArea" stylesheets="@../../css/swp.css" text="State"/>
+         <Label fx:id="informationActionLabel" layoutX="14.0" layoutY="45.0" prefHeight="23.0" prefWidth="264.0"
+                styleClass="jfx-textArea" stylesheets="@../../css/swp.css" text="Action"/>
+      </children>
+   </Pane>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uol.swp.client.auth.LoginPresenter">
+    <ImageView blendMode="MULTIPLY" fitHeight="900.0" fitWidth="1600" pickOnBounds="true">
+        <Image url="@../graphics/Hintergrund_ohneLogo.png" />
+    </ImageView>
+    <JFXTextField id="loginField" fx:id="loginField" layoutX="700.0" layoutY="380.0" prefHeight="40.0" prefWidth="300.0" promptText="Nutzernamen eingeben" style="-fx-font-size: 18" />
+    <JFXPasswordField id="passwordField" fx:id="passwordField" layoutX="700.0" layoutY="470.0" prefWidth="300.0" promptText="Passwort eingeben" style="-fx-font-size: 18" />
+    <JFXButton id="loginButton" defaultButton="true" layoutX="700.0" layoutY="538.0" mnemonicParsing="false" onAction="#onLoginButtonPressed" style="-fx-font-size: 18" text="Anmelden" />
+    <JFXButton id="registerButton" layoutX="873.0" layoutY="538.0" mnemonicParsing="false" onAction="#onRegisterButtonPressed" style="-fx-font-size: 18" text="Registrieren" />
+    <Label layoutX="565.0" layoutY="390.0" style="-fx-font-size: 18; -fx-font-weight: bold" text="Benutzername" />
+    <Label layoutX="587.0" layoutY="475.0" style="-fx-font-size: 18; -fx-font-weight: bold" text="Passwort" />
+</AnchorPane>

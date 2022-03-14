@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="900.0" prefWidth="1600" stylesheets="@../css/swp.css"
+            xmlns="http://javafx.com/javafx/11" fx:controller="de.uol.swp.client.credits.CreditsPresenter">
+    <Label alignment="CENTER" style="-fx-font-size: 20;" styleClass="jfx-label" text="Credits"
+           AnchorPane.leftAnchor="750.0" AnchorPane.rightAnchor="750.0" AnchorPane.topAnchor="10.0">
+    </Label>
+    <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+        <ImageView fitHeight="489.0" fitWidth="819.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/Gruppenfoto.png"/>
+        </ImageView>
+    </HBox>
+    <JFXButton layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#onBackButtonPressed"
+               styleClass="jfx-button" stylesheets="@../css/swp.css" text="Zurück" AnchorPane.leftAnchor="20.0"
+               AnchorPane.topAnchor="20.0"/>
+</AnchorPane>

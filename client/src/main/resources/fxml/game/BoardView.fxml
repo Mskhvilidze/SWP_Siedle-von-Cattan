@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<Pane fx:id="root" prefWidth="740.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../../css/swp.css" fx:controller="de.uol.swp.client.game.BoardPresenter">
+    <StackPane>
+        <ImageView fx:id="boardImageView" fitHeight="642.0" fitWidth="740.0" pickOnBounds="true" preserveRatio="true" translateY="-20.0" StackPane.alignment="TOP_LEFT">
+            <Image url="@../../graphics/etc/Haefen.png" />
+        </ImageView>
+        <Pane fx:id="hexPane" pickOnBounds="false" prefHeight="642.0" prefWidth="740.0" />
+        <Pane fx:id="cornerEdgePane" pickOnBounds="false" prefHeight="642.0" prefWidth="740.0" />
+    </StackPane>
+    <JFXButton fx:id="cancelBuildButton" layoutX="630.0" layoutY="50.0" mnemonicParsing="false" onAction="#onCancelBuild" text="Bauen abbrechen" visible="false" />
+</Pane>

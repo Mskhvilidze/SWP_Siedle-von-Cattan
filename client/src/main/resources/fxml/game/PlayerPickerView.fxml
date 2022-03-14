@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane style="-fx-background-color: rgba(0,0,0,0.6)" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0"
+            stylesheets="@../../css/swp.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.uol.swp.client.game.popup.PlayerPickerPresenter">
+    <Rectangle fx:id="p1Color" visible="false" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="71.0"
+               layoutX="66.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <Rectangle fx:id="p2Color" visible="false" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="71.0"
+               layoutX="245.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <Rectangle fx:id="p3Color" visible="false" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="71.0"
+               layoutX="426.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="78.0" />
+    <JFXButton fx:id="p1Button" visible="false" onAction="#onOneRobbButtonPressed" layoutX="79.0" layoutY="150.0"
+               mnemonicParsing="false" text="Button" />
+    <JFXButton fx:id="p2Button" visible="false" onAction="#onTwoRobbButtonPressed" layoutX="258.0" layoutY="150.0"
+               mnemonicParsing="false" text="Button" />
+    <JFXButton fx:id="p3Button" visible="false" onAction="#onThreeRobbButtonPressed" layoutX="439.0" layoutY="150.0"
+               mnemonicParsing="false" text="Button" />
+</AnchorPane>
